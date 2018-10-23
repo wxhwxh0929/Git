@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	/*var time = new Date(2000,1,32);
+	console.log(time.getMonth());//3
+	//
+	const a = [];
+	a.push(1);
+	console.log(a[0]);*/
+	
+	
+	//构造函数
+	function Fn(){
+		var num = 200;
+		this.x = 100;
+		this.getX = function(){
+			console.log(this);
+			console.log(this.x);
+		}
+		//return [0,1,2,3,4,5];
+	}
+	//当不需要传递参数的时候，()可以不写
+	var res = new Fn;
+	//console.log(res.x);
+	
+	//this的问题
+	console.log(res.getX());
+	
+	//私有属性
+	console.log(res.num);//undefined
+	
+	//return返回值
+	console.log(res);
+	
+	//instanceof
+	console.log(res instanceof Fn);//true
+	
+	//判断是否时一个对象的私有属性
+	console.log(res.hasOwnProperty("x"));//true
+	
+	var res1 = new Fn();
+	var res2 = new Fn();
+	console.log(res1.getX == res2.getX);//false
+	
+	//为了使得不同的实例有相同的函数，需要在原型上设置为公有函数
+	Fn.prototype.say = function(){
+		console.log(1);
+	}
+	console.log(res1.say == res2.say);//true
+	var s = "a";
+	s.index
+</script>
